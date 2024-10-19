@@ -31,7 +31,7 @@ LOBJS+= $(LISA_OBJ)
 AOBJS=		 bwaseqio.o  \
 			 kopen.o  \
 			fastmap.o
-PROG=		bwa
+PROG=		BWA-HUST
 INCLUDES=	
 LIBS=		-lm -lz -lpthread
 SUBDIRS=	.
@@ -60,7 +60,7 @@ endif
 
 all:$(PROG)
 
-bwa:libbwa.a $(AOBJS) main.o
+BWA-HUST:libbwa.a $(AOBJS) main.o
 		cd $(EXT)/ext/safestringlib/ && $(MAKE)
 		cd ../../../../
 		$(CC) $(CFLAGS) $(CPPFLAGS) $(DFLAGS) $(AOBJS) main.o -L. -lbwa $(LIBS)  -o $@
